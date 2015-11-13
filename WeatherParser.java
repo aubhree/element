@@ -19,16 +19,16 @@ public class WeatherParser{
 	
 	}
 
-	private static JSONObject getObject(String tagName, JSONObject jObj)  throws JSONException {
-		JSONObject subObj = jObj.getJSONObject(tagName);
+	private static JSONObject getObject(String tagName, JSONObject jsonObj)  throws JSONException {
+		JSONObject subObj = jsonObj.getJSONObject(tagName);
 		return subObj;
 	}
 	
 	private static float getFloat(String tagName, JSONObject jsonObj) throws JSONException {
-		return jsonObj.getInt(tagName);
+		return (float) jsonObj.getDouble(tagName);
 	}
 	
-	private static int getInt(String tagName, JSONObject jObj) throws JSONException {
-		return jObj.getInt(tagName);
+	private static int getInt(String tagName, JSONObject jsonObj) throws JSONException {
+		return jsonObj.getInt(tagName);
 	}
 }
